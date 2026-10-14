@@ -1,0 +1,92 @@
+﻿=== 鍚勬牱鏈?m6A 浣嶇偣鏁?===
+   sample       group n_sites
+   <char>      <fctr>   <int>
+1:    B01    Ossified    1696
+2:    B02    Ossified    7244
+3:    B03    Ossified    6162
+4:    A01 NonOssified     825
+5:    A02 NonOssified    2043
+6:    A03 NonOssified    3205
+楠ㄥ寲 vs 闈為鍖?peak 鏁?Wilcoxon P = 0.40 (3v3, 鏈€灏忓彲杈?0.1)
+m6A 妫€鍑哄熀鍥犳暟(鑳屾櫙): 9058 
+楠ㄥ寲缁勯珮鐢插熀鍖?hyper): 1377 | 闈為鍖栫粍鐗瑰紓(hypo): 89 | 涓ょ粍鍏辨湁: 812 
+
+=== PCD 鍩哄洜闆嗗湪楠ㄥ寲缁勯珮鐢插熀鍖栧熀鍥犱腑鐨勫瘜闆?===
+            PCD pcd_in_bg hyper_hits expected odds_ratio      P
+    cuproptosis        12          4      1.8       2.79 0.0958
+ disulfidptosis        12          3      1.8       1.86 0.2710
+    ferroptosis        22          2      3.3       0.56 0.8690
+     panoptosis        13          2      2.0       1.01 0.6100
+     pyroptosis         7          2      1.1       2.23 0.2890
+
+=== 楠ㄥ寲缁勯珮鐢插熀鍖栫殑 PCD 鍩哄洜 ===
+            PCD    gene
+    cuproptosis    DLAT
+    cuproptosis     GLS
+    cuproptosis  CDKN2A
+    cuproptosis   ATP7A
+ disulfidptosis SLC7A11
+ disulfidptosis   NUBPL
+ disulfidptosis    INF2
+    ferroptosis SLC7A11
+    ferroptosis     GLS
+     panoptosis    FADD
+     panoptosis   GSDMD
+     pyroptosis   GSDMD
+     pyroptosis   NLRP1
+
+=== 楂樼敳鍩哄寲 PCD 鍩哄洜鐨勮〃杈捐仈鍔?涓?GSE113212 鑰佸勾鑲ュ帤鈫? 楠岃瘉=GSE206560 楠ㄥ寲鈫? ===
+    gene main_logFC main_adjP val_logFC val_adjP
+    DLAT      -0.13      0.68     -0.01    0.990
+     GLS       0.12      0.76     -0.23    0.410
+  CDKN2A       0.98      0.12     -1.41    0.290
+   ATP7A       0.06      0.89     -0.06    0.900
+ SLC7A11       0.99      0.15     -2.81    0.008
+   NUBPL       0.02      0.95      0.07    0.890
+    INF2       0.34      0.26      0.12    0.790
+ SLC7A11       0.99      0.15     -2.81    0.008
+     GLS       0.12      0.76     -0.23    0.410
+    FADD       0.20      0.49     -0.32    0.580
+   GSDMD       0.68      0.27      0.38    0.610
+   GSDMD       0.68      0.27      0.38    0.610
+   NLRP1      -0.02      0.96      0.68    0.300
+
+=== m6A 璋冩帶閰跺湪 GSE206560 鐨勮〃杈句笌鑷韩 m6A 鐘舵€?===
+      gene main_logFC main_adjP val_logFC val_adjP     m6a_status
+    METTL3       0.13     0.670     -0.24    0.440 not_methylated
+   METTL14      -0.32     0.450     -0.05    0.900 not_methylated
+   METTL16      -0.13     0.610      0.22    0.500 not_methylated
+      WTAP      -0.12     0.680     -0.02    0.960 not_methylated
+     VIRMA         NA        NA      0.12    0.700 not_methylated
+    ZC3H13       0.14     0.760      0.21    0.490     methylated
+     RBM15       0.09     0.870     -0.30    0.360 not_methylated
+    RBM15B       0.46     0.320     -0.17    0.650 not_methylated
+     CBLL1      -0.04     0.910     -0.04    0.940 not_methylated
+    ALKBH5       0.39     0.360      0.06    0.870     methylated
+       FTO      -2.29     0.066      0.15    0.620 not_methylated
+    YTHDC1      -0.70     0.420      0.03    0.940 not_methylated
+    YTHDC2      -0.16     0.550     -0.03    0.930 not_methylated
+    YTHDF1       0.36     0.260     -0.48    0.160     methylated
+    YTHDF2      -0.10     0.680     -0.14    0.680     methylated
+    YTHDF3       0.28     0.370      0.17    0.590     methylated
+   IGF2BP2       0.14     0.830      1.56    0.052     methylated
+   IGF2BP3       0.60     0.460     -0.58    0.690 not_methylated
+ HNRNPA2B1       0.13     0.670     -0.08    0.820 not_methylated
+      RBMX      -0.38     0.300     -0.30    0.300 not_methylated
+    ELAVL1      -0.19     0.510     -0.10    0.770 not_methylated
+      FMR1      -0.13     0.630      0.12    0.690     methylated
+    LRPPRC      -0.05     0.880     -0.25    0.400 not_methylated
+
+=== 鍏抽敭鍩哄洜鐨?m6A 鐘舵€佷笌琛ㄨ揪 ===
+    gene n_oss n_non       category main_logFC main_adjP val_logFC val_adjP
+   TGFB1     2     1     methylated       1.62     0.022     -0.14    0.820
+  BMPR1B     1     0     methylated       2.12     0.022     -1.09    0.120
+ COL13A1     1     0     methylated       1.59     0.028      2.57    0.017
+ COL11A1    NA    NA not_methylated       1.93     0.055     -6.90    0.190
+  STEAP3     1     1     methylated       1.87     0.058      0.29    0.650
+   HMOX1    NA    NA not_methylated       2.46     0.130     -0.51    0.600
+  CDKN1A     0     1     methylated       1.04     0.140      0.12    0.780
+    BMP2     2     1     methylated       0.46     0.260      0.88    0.330
+   RUNX2     1     0     methylated       0.73     0.330      0.24    0.540
+
+[07b] m6A 脳 PCD 浜ゅ弶鍒嗘瀽瀹屾垚銆?

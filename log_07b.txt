@@ -1,0 +1,239 @@
+
+   File C:\Users\10215\Documents/.Renviron contains invalid line(s)
+      GIUT
+   They were ignored
+
+
+R version 4.5.3 (2026-03-11 ucrt) -- "Reassured Reassurer"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # =====================================================================
+> # 07b_m6a_pcd_cross.R
+> # GSE206560 m6A MeRIP-seq × PCD 交叉分析
+> #   IP 样本 peak → 基因级 m6A 状态 → 骨化组高/低甲基化基因
+> #   → PCD 基因集富集(Fisher) → 与主数据集/验证集表达方向联动
+> # 前置: scripts/07b_prep_m6a.py 已生成 results/m6a_sites_all.csv
+> # 运行: Rterm.exe --no-restore --file=scripts/07b_m6a_pcd_cross.R
+> # =====================================================================
+> suppressPackageStartupMessages({ library(data.table); library(ggplot2) })
+> 
+> setwd("C:/Users/10215/WorkBuddy/2026-10-03-00-10-07")
+> OUT_DIR <- "results"; FIG_DIR <- "figures"
+> 
+> # ---------------- 1. 读入位点表, 统计各样本 peak 数 ----------------
+> sites <- fread(file.path(OUT_DIR, "m6a_sites_all.csv"))
+> samples <- c(A01 = "NonOssified", A02 = "NonOssified", A03 = "NonOssified",
++              B01 = "Ossified", B02 = "Ossified", B03 = "Ossified")
+> cnt <- sites[, .(n_sites = .N), by = .(sample, group)]
+> cnt$group <- factor(cnt$group, levels = c("NonOssified", "Ossified"))
+> cat("=== 各样本 m6A 位点数 ===\n"); print(cnt)
+=== 各样本 m6A 位点数 ===
+   sample       group n_sites
+   <char>      <fctr>   <int>
+1:    B01    Ossified    1696
+2:    B02    Ossified    7244
+3:    B03    Ossified    6162
+4:    A01 NonOssified     825
+5:    A02 NonOssified    2043
+6:    A03 NonOssified    3205
+> w <- tryCatch(wilcox.test(n_sites ~ group, cnt)$p.value, error = function(e) NA)
+> cat(sprintf("骨化 vs 非骨化 peak 数 Wilcoxon P = %.2f (3v3, 最小可达 0.1)\n", w))
+骨化 vs 非骨化 peak 数 Wilcoxon P = 0.40 (3v3, 最小可达 0.1)
+> 
+> p1 <- ggplot(cnt, aes(sample, n_sites, fill = group)) +
++   geom_col(width = 0.65) +
++   geom_text(aes(label = n_sites), vjust = -0.3, size = 3.5) +
++   scale_fill_manual(values = c(NonOssified = "#4C72B0", Ossified = "#C44E52")) +
++   labs(x = NULL, y = "Number of m6A peak sites", fill = NULL,
++        title = "m6A sites per sample (GSE206560, IP)") +
++   theme_bw(base_size = 12)
+> ggsave(file.path(FIG_DIR, "Fig_m6a_peakcounts_GSE206560.png"), p1, width = 7, height = 5, dpi = 300)
+> ggsave(file.path(FIG_DIR, "Fig_m6a_peakcounts_GSE206560.pdf"), p1, width = 7, height = 5)
+> fwrite(cnt, file.path(OUT_DIR, "m6a_peakcounts_GSE206560.csv"))
+> 
+> # ---------------- 2. 基因级 m6A 状态矩阵 ----------------
+> gm <- dcast(sites, gene ~ sample, fun.aggregate = length, value.var = "peakID")
+> gmat <- as.matrix(gm[, -1]); rownames(gmat) <- gm$gene
+> storage.mode(gmat) <- "integer"
+> oss   <- c("B01", "B02", "B03"); non <- c("A01", "A02", "A03")
+> present <- gmat > 0
+> n_oss <- rowSums(present[, oss]); n_non <- rowSums(present[, non])
+> bg <- rownames(gmat)                       # 背景: 任一样本检出 m6A 的基因
+> cat("m6A 检出基因数(背景):", length(bg), "\n")
+m6A 检出基因数(背景): 9058 
+> 
+> hyper <- bg[n_oss >= 2 & n_non == 0]       # 骨化组稳定甲基化, 非骨化组全无
+> hypo  <- bg[n_non >= 2 & n_oss == 0]       # 反向
+> both  <- bg[n_oss >= 2 & n_non >= 2]       # 两组共有
+> cat("骨化组高甲基化(hyper):", length(hyper), "| 非骨化组特异(hypo):", length(hypo),
++     "| 两组共有:", length(both), "\n")
+骨化组高甲基化(hyper): 1377 | 非骨化组特异(hypo): 89 | 两组共有: 812 
+> fwrite(data.table(gene = bg, n_ossified = n_oss[bg], n_nonossified = n_non[bg],
++                   category = ifelse(bg %in% hyper, "Ossified_hyper",
++                              ifelse(bg %in% hypo, "NonOssified_specific", "Common"))),
++        file.path(OUT_DIR, "m6a_gene_status_GSE206560.csv"))
+> 
+> # ---------------- 3. PCD 基因集 m6A 富集 (Fisher) ----------------
+> gs <- list()
+> for (f in list.files("pcd_genesets", pattern = "^gs_.*\\.txt$", full.names = TRUE)) {
++   nm <- sub("\\.txt$", "", sub("^gs_", "", basename(f)))
++   gs[[nm]] <- trimws(readLines(f))
++ }
+> enr <- do.call(rbind, lapply(names(gs), function(nm) {
++   gl <- intersect(gs[[nm]], bg)                       # 在背景内可检的 PCD 基因
++   hit <- intersect(gl, hyper)
++   a <- length(hit); b <- length(gl) - a
++   c <- length(hyper) - a; d <- length(bg) - a - b - c
++   ft <- fisher.test(matrix(c(a, b, c, d), 2), alternative = "greater")
++   data.frame(PCD = nm, pcd_in_bg = length(gl), hyper_hits = a,
++              expected = round(length(gl) * length(hyper) / length(bg), 1),
++              odds_ratio = round(unname(ft$estimate), 2), P = signif(ft$p.value, 3))
++ }))
+> cat("\n=== PCD 基因集在骨化组高甲基化基因中的富集 ===\n"); print(enr, row.names = FALSE)
+
+=== PCD 基因集在骨化组高甲基化基因中的富集 ===
+            PCD pcd_in_bg hyper_hits expected odds_ratio      P
+    cuproptosis        12          4      1.8       2.79 0.0958
+ disulfidptosis        12          3      1.8       1.86 0.2710
+    ferroptosis        22          2      3.3       0.56 0.8690
+     panoptosis        13          2      2.0       1.01 0.6100
+     pyroptosis         7          2      1.1       2.23 0.2890
+> fwrite(enr, file.path(OUT_DIR, "m6a_PCD_enrichment_GSE206560.csv"))
+> 
+> # ---------------- 4. 具体命中基因表 ----------------
+> hits <- do.call(rbind, lapply(names(gs), function(nm) {
++   hit <- intersect(intersect(gs[[nm]], bg), hyper)
++   if (length(hit)) data.frame(PCD = nm, gene = hit) else NULL
++ }))
+> if (!is.null(hits)) {
++   cat("\n=== 骨化组高甲基化的 PCD 基因 ===\n"); print(hits, row.names = FALSE)
++   fwrite(hits, file.path(OUT_DIR, "m6a_PCD_hyper_genes_GSE206560.csv"))
++ }
+
+=== 骨化组高甲基化的 PCD 基因 ===
+            PCD    gene
+    cuproptosis    DLAT
+    cuproptosis     GLS
+    cuproptosis  CDKN2A
+    cuproptosis   ATP7A
+ disulfidptosis SLC7A11
+ disulfidptosis   NUBPL
+ disulfidptosis    INF2
+    ferroptosis SLC7A11
+    ferroptosis     GLS
+     panoptosis    FADD
+     panoptosis   GSDMD
+     pyroptosis   GSDMD
+     pyroptosis   NLRP1
+> 
+> # ---------------- 5. 与表达方向联动(主数据集 + 验证集 DE) ----------------
+> main_deg <- fread(file.path(OUT_DIR, "DEG_limma_full.csv"), data.table = FALSE)
+> names(main_deg)[names(main_deg) == "Gene"] <- "gene"
+> val_deg <- fread(file.path(OUT_DIR, "DEG_GSE206560_full.csv"), data.table = FALSE)
+> val_deg <- val_deg[!duplicated(val_deg$gene), ]
+> lk <- function(genes) {
++   m <- main_deg[match(genes, main_deg$gene), c("logFC", "adj.P.Val")]
++   v <- val_deg[match(genes, val_deg$gene), c("logFC", "adj.P.Val")]
++   data.frame(gene = genes,
++              main_logFC = round(m$logFC, 2), main_adjP = signif(m$adj.P.Val, 2),
++              val_logFC = round(v$logFC, 2), val_adjP = signif(v$adj.P.Val, 2))
++ }
+> if (!is.null(hits)) {
++   cat("\n=== 高甲基化 PCD 基因的表达联动(主=GSE113212 老年肥厚↑; 验证=GSE206560 骨化↑) ===\n")
++   print(lk(hits$gene), row.names = FALSE)
++   fwrite(lk(hits$gene), file.path(OUT_DIR, "m6a_PCD_hyper_exprlink.csv"))
++ }
+
+=== 高甲基化 PCD 基因的表达联动(主=GSE113212 老年肥厚↑; 验证=GSE206560 骨化↑) ===
+    gene main_logFC main_adjP val_logFC val_adjP
+    DLAT      -0.13      0.68     -0.01    0.990
+     GLS       0.12      0.76     -0.23    0.410
+  CDKN2A       0.98      0.12     -1.41    0.290
+   ATP7A       0.06      0.89     -0.06    0.900
+ SLC7A11       0.99      0.15     -2.81    0.008
+   NUBPL       0.02      0.95      0.07    0.890
+    INF2       0.34      0.26      0.12    0.790
+ SLC7A11       0.99      0.15     -2.81    0.008
+     GLS       0.12      0.76     -0.23    0.410
+    FADD       0.20      0.49     -0.32    0.580
+   GSDMD       0.68      0.27      0.38    0.610
+   GSDMD       0.68      0.27      0.38    0.610
+   NLRP1      -0.02      0.96      0.68    0.300
+> 
+> # ---------------- 6. m6A 调控酶在验证集的表达 ----------------
+> regs <- c("METTL3","METTL14","METTL16","WTAP","VIRMA","ZC3H13","RBM15","RBM15B",
++           "CBLL1","KIAA1429","ALKBH5","FTO","YTHDC1","YTHDC2","YTHDF1","YTHDF2","YTHDF3",
++           "IGF2BP1","IGF2BP2","IGF2BP3","HNRNPA2B1","RBMX","ELAVL1","FMR1","LRPPRC")
+> rt <- lk(intersect(regs, val_deg$gene))
+> rt$m6a_status <- ifelse(rt$gene %in% hyper, "Ossified_hyper",
++                  ifelse(rt$gene %in% bg, "methylated", "not_methylated"))
+> cat("\n=== m6A 调控酶在 GSE206560 的表达与自身 m6A 状态 ===\n"); print(rt, row.names = FALSE)
+
+=== m6A 调控酶在 GSE206560 的表达与自身 m6A 状态 ===
+      gene main_logFC main_adjP val_logFC val_adjP     m6a_status
+    METTL3       0.13     0.670     -0.24    0.440 not_methylated
+   METTL14      -0.32     0.450     -0.05    0.900 not_methylated
+   METTL16      -0.13     0.610      0.22    0.500 not_methylated
+      WTAP      -0.12     0.680     -0.02    0.960 not_methylated
+     VIRMA         NA        NA      0.12    0.700 not_methylated
+    ZC3H13       0.14     0.760      0.21    0.490     methylated
+     RBM15       0.09     0.870     -0.30    0.360 not_methylated
+    RBM15B       0.46     0.320     -0.17    0.650 not_methylated
+     CBLL1      -0.04     0.910     -0.04    0.940 not_methylated
+    ALKBH5       0.39     0.360      0.06    0.870     methylated
+       FTO      -2.29     0.066      0.15    0.620 not_methylated
+    YTHDC1      -0.70     0.420      0.03    0.940 not_methylated
+    YTHDC2      -0.16     0.550     -0.03    0.930 not_methylated
+    YTHDF1       0.36     0.260     -0.48    0.160     methylated
+    YTHDF2      -0.10     0.680     -0.14    0.680     methylated
+    YTHDF3       0.28     0.370      0.17    0.590     methylated
+   IGF2BP2       0.14     0.830      1.56    0.052     methylated
+   IGF2BP3       0.60     0.460     -0.58    0.690 not_methylated
+ HNRNPA2B1       0.13     0.670     -0.08    0.820 not_methylated
+      RBMX      -0.38     0.300     -0.30    0.300 not_methylated
+    ELAVL1      -0.19     0.510     -0.10    0.770 not_methylated
+      FMR1      -0.13     0.630      0.12    0.690     methylated
+    LRPPRC      -0.05     0.880     -0.25    0.400 not_methylated
+> fwrite(rt, file.path(OUT_DIR, "m6a_regulators_GSE206560.csv"))
+> 
+> # ---------------- 7. 关键基因 m6A 状态 ----------------
+> keyg <- c("TGFB1","BMPR1B","COL13A1","COL11A1","STEAP3","HMOX1","CDKN1A","BMP2","RUNX2")
+> kt <- data.frame(gene = keyg,
++                  n_oss = n_oss[keyg], n_non = n_non[keyg],
++                  category = ifelse(keyg %in% hyper, "Ossified_hyper",
++                             ifelse(keyg %in% bg, "methylated", "not_methylated")))
+> kt <- cbind(kt, lk(keyg)[, -1])
+> cat("\n=== 关键基因的 m6A 状态与表达 ===\n"); print(kt, row.names = FALSE)
+
+=== 关键基因的 m6A 状态与表达 ===
+    gene n_oss n_non       category main_logFC main_adjP val_logFC val_adjP
+   TGFB1     2     1     methylated       1.62     0.022     -0.14    0.820
+  BMPR1B     1     0     methylated       2.12     0.022     -1.09    0.120
+ COL13A1     1     0     methylated       1.59     0.028      2.57    0.017
+ COL11A1    NA    NA not_methylated       1.93     0.055     -6.90    0.190
+  STEAP3     1     1     methylated       1.87     0.058      0.29    0.650
+   HMOX1    NA    NA not_methylated       2.46     0.130     -0.51    0.600
+  CDKN1A     0     1     methylated       1.04     0.140      0.12    0.780
+    BMP2     2     1     methylated       0.46     0.260      0.88    0.330
+   RUNX2     1     0     methylated       0.73     0.330      0.24    0.540
+> fwrite(kt, file.path(OUT_DIR, "keygenes_m6a_status_GSE206560.csv"))
+> 
+> cat("\n[07b] m6A × PCD 交叉分析完成。\n")
+
+[07b] m6A × PCD 交叉分析完成。
+> 

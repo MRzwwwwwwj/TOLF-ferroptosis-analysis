@@ -1,0 +1,30 @@
+﻿鍩哄洜闆? 16 24 36 18 24 
+cuproptosis.txt 瑕嗙洊 16/16
+disulfidptosis.txt 瑕嗙洊 24/24
+ferroptosis.txt 瑕嗙洊 36/36
+panoptosis.txt  瑕嗙洊 18/18
+pyroptosis.txt  瑕嗙洊 23/24
+               Module method    mean_young mean_elderly       direction
+1     cuproptosis.txt   GSVA  0.0930803955  -0.19961419 down_in_elderly
+2  disulfidptosis.txt   GSVA -0.0990877224   0.04387051   up_in_elderly
+3     ferroptosis.txt   GSVA -0.1589927952   0.10791944   up_in_elderly
+4      panoptosis.txt   GSVA -0.0742319277   0.09923652   up_in_elderly
+5      pyroptosis.txt   GSVA -0.0343344280   0.05549348   up_in_elderly
+6     cuproptosis.txt ssGSEA  0.1400348373  -0.01245688 down_in_elderly
+7  disulfidptosis.txt ssGSEA  0.0237896657   0.09619581   up_in_elderly
+8     ferroptosis.txt ssGSEA -0.0065204286   0.22081468   up_in_elderly
+9      panoptosis.txt ssGSEA -0.0009343753   0.13664876   up_in_elderly
+10     pyroptosis.txt ssGSEA  0.0669547320   0.17567585   up_in_elderly
+     wilcox_P
+1  0.11428571
+2  0.34285714
+3  0.02857143
+4  0.68571429
+5  0.88571429
+6  0.20000000
+7  0.34285714
+8  0.05714286
+9  0.48571429
+10 0.68571429
+
+=== 瀹屾垚 ===

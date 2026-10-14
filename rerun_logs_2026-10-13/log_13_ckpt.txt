@@ -1,0 +1,10 @@
+﻿妫€鏌ョ偣鍩哄洜瑕嗙洊: 23 / 24 
+缂哄け: VSIR 
+null device 
+          1 
+M1 瑕嗙洊: 13 / 13 ; M2 瑕嗙洊: 11 / 11 
+
+ferroptosis ssGSEA x M2 score: rho=0.667, P=0.0831
+ferroptosis ssGSEA x M1 score: rho=-0.095, P=0.84
+
+=== 13 checkpoint/M1M2 done ===

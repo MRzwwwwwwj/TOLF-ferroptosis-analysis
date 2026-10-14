@@ -1,0 +1,32 @@
+﻿Ranked genes: 22231 
+Gene set sizes:
+   cuproptosis.txt disulfidptosis.txt    ferroptosis.txt     panoptosis.txt 
+                16                 24                 36                 18 
+    pyroptosis.txt     m6A_regulators 
+                23                 22 
+Rscript.exe : Warning message:
+所在位置 行:503 字符: 243
++ ... m6areg.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\09_gsea_fg ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning message::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+In preparePathwaysAndStats(pathways, stats, minSize, maxSize, gseaParam,  :
+  There are ties in the preranked stats (0.97% of the list).
+The order of those tied genes will be arbitrary, which may produce unexpected results.
+=== fgsea results ===
+            pathway size     ES    NES   pval  padj
+    ferroptosis.txt   36  0.481  1.603 0.0197 0.118
+    cuproptosis.txt   16 -0.445 -1.356 0.1243 0.273
+ disulfidptosis.txt   24  0.430  1.318 0.1367 0.273
+     panoptosis.txt   18  0.389  1.128 0.2942 0.441
+     pyroptosis.txt   23  0.274  0.837 0.7183 0.862
+     m6A_regulators   22  0.190  0.576 0.9703 0.970
+Warning messages:
+1: In max(tops) : no non-missing arguments to max; returning -Inf
+2: In min(bottoms) : no non-missing arguments to min; returning Inf
+3: In max(tops) : no non-missing arguments to max; returning -Inf
+4: In min(bottoms) : no non-missing arguments to min; returning Inf
+5: In max(tops) : no non-missing arguments to max; returning -Inf
+6: In min(bottoms) : no non-missing arguments to min; returning Inf
+=== 09 done ===

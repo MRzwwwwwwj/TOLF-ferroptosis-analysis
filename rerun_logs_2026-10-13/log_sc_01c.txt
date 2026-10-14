@@ -1,0 +1,45 @@
+﻿>>> [Pass A] LSS 
+>>> [Pass A] LDH 
+>>> [Pass A] LFH1 
+Rscript.exe : Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+所在位置 行:503 字符: 115
++ ... 026-10-13"; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\sc_01c_low ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: Featur...th dashes ('-'):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+>>> [Pass A] LFH2 
+Warning: Feature names cannot have underscores ('_'), replacing with dashes ('-')
+>>> [Pass A] LFH3 
+  sample_id          group n_cells_raw n_cells_post median_nFeature
+1       LSS LF_hypertrophy        2655         2578          3024.0
+2       LDH    Control_LDH       13033        12631           980.0
+3      LFH1 LF_hypertrophy        1994         1934          2584.5
+4      LFH2 LF_hypertrophy       13220        13001          2119.0
+5      LFH3 LF_hypertrophy        3767         3673          3342.0
+  median_nCount median_pctMT
+1        9554.5         0.43
+2        1601.0         1.69
+3       10524.0         1.13
+4        7352.0         1.39
+5       14305.0         1.05
+>>> [Pass B] combining matrices
+>>> common genes: 14060 
+>>> cbind LSS done, total cells: 2578 
+>>> cbind LDH done, total cells: 15209 
+>>> cbind LFH1 done, total cells: 17143 
+>>> cbind LFH2 done, total cells: 30144 
+>>> cbind LFH3 done, total cells: 33817 
+            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3603277 192.5   10621187  567.3   6509166  347.7
+Vcells 109655780 836.7  289213764 2206.6 239297265 1825.7
+            used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   3603472 192.5   10621187  567.3   6717765  358.8
+Vcells 109950459 838.9  370662933 2828.0 386181049 2946.4
+>>> merged object cells: 33817 
+>>> Running Harmony
+null device 
+          1 
+null device 
+          1 
+=== sc_01c done. Cells total: 33817 ===

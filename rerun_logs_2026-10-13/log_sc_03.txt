@@ -1,0 +1,70 @@
+﻿Ferroptosis genes covered: 34 
+[1] "Ferroptosis1"
+# A tibble: 7 脳 4
+  celltype         n mean_score median_score
+  <chr>        <int>      <dbl>        <dbl>
+1 Macrophage    3367     0.365        0.357 
+2 Fibroblast   16917     0.272        0.284 
+3 Endothelial   6260     0.209        0.162 
+4 Pericyte_SMC  1448     0.183        0.148 
+5 Cycling        844     0.130        0.128 
+6 B_cell        1042     0.126        0.110 
+7 NK_cell       3939     0.0722       0.0522
+=== LSS vs LDH ferroptosis (GSE294458) ===
+# A tibble: 7 脳 8
+  celltype     n_LSS n_LDH mean_LSS mean_LDH  delta p_wilcox    p_adj
+  <chr>        <int> <int>    <dbl>    <dbl>  <dbl>    <dbl>    <dbl>
+1 B_cell          45   790   0.188    0.0704 0.118  1.36e- 8 1.90e- 8
+2 Cycling        135   663   0.170    0.121  0.0493 9.46e-10 1.66e- 9
+3 Endothelial    457  2842   0.0694   0.0156 0.0538 5.26e-25 1.84e-24
+4 Fibroblast    1596  1608   0.0984   0.0721 0.0262 3.45e-13 8.06e-13
+5 Macrophage     190  2645   0.468    0.311  0.157  3.39e-31 2.37e-30
+6 NK_cell         79  3317   0.119    0.0733 0.0458 1.29e- 4 1.50e- 4
+7 Pericyte_SMC    76   766   0.0802   0.0631 0.0171 4.48e- 2 4.48e- 2
+=== SPP1+ vs SPP1- macrophage ferroptosis ===
+# A tibble: 2 脳 4
+  celltype_detail      n mean_score p_wilcox
+  <chr>            <int>      <dbl>    <dbl>
+1 SPP1+_Macrophage   343      0.442 2.92e-15
+2 SPP1-_Macrophage  3024      0.356 2.92e-15
+Rscript.exe : Scale for colour is already present.
+所在位置 行:503 字符: 115
++ ... 026-10-13"; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\sc_03_vali ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Scale for colour is already present.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Adding another scale for colour, which will replace the existing scale.
+null device 
+          1 
+null device 
+          1 
+The default behaviour of split.by has changed.
+Separate violin plots are now plotted side-by-side.
+To restore the old behaviour of a single split violin,
+set split.plot = TRUE.
+      
+This message will be shown once per session.
+null device 
+          1 
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+null device 
+          1 
+null device 
+          1 
+=== sc_03 done ===

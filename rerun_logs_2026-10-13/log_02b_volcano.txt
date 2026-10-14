@@ -1,0 +1,8 @@
+﻿鏍囨敞鍩哄洜鏍稿:
+     Gene  logFC      P.Value  adj.P.Val
+1  BMPR1B 2.1200 9.793069e-07 0.02162127
+3   TGFB1 1.6200 2.917719e-06 0.02162127
+5 COL13A1 1.5925 6.252260e-06 0.02779880
+7 COL11A1 1.9325 1.814101e-05 0.05518022
+volcano relabeled & saved.
+Fig1 reassembled: 10080 x 3680 

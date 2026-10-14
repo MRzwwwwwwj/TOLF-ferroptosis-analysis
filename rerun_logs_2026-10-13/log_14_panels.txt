@@ -1,0 +1,21 @@
+﻿saved: Fig1_discovery_overview.png 10080 x 3680 
+saved: Fig2_enrichment.png 11651 x 1880 
+saved: Fig3_validation_m6A.png 7296 x 1896 
+saved: Fig4_scRNA.png 9047 x 3680 
+saved: Fig5_m6Areg_GSEA.png 5620 x 3680 
+saved: Fig6_LASSO_ROC.png 4400 x 3680 
+saved: Fig7_checkpoint_M1M2.png 8800 x 1880 
+saved: Fig8_nomogram_DCA.png 5753 x 3680 
+saved: FigS5_GSE271018.png 11520 x 3680 
+saved: FigS6_CellChat.png 9440 x 9496 
+Rscript.exe : Error: Rscript.exe: UnableToOpenBlob `C:\Users\10215\WorkBuddy\20
+26-10-03-00-10-07\rerun_2026-10-13\scRNA_out\monocle\Fig_mono_A_trajectory.png'
+: No such file or directory @ error/blob.c/OpenBlob/2967
+所在位置 行:503 字符: 232
++ ... _sc_07.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\14_figure_ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error: Rscript....c/OpenBlob/2967 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Execution halted

@@ -1,0 +1,41 @@
+﻿璇诲彇 GSE106253锛堟湰鍦版湁 series matrix 鍒欑洿鎺ョ敤锛屽惁鍒欒仈缃戜笅杞斤級...
+Rscript.exe : Found 1 file(s)
+所在位置 行:503 字符: 239
++ ... _annot.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\11_lasso_e ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Found 1 file(s):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+GSE106253_series_matrix.txt.gz
+Using locally cached version: C:/Users/10215/WorkBuddy/2026-10-03-00-10-07/rerun_2026-10-13/GSE106253/GSE106253_series_
+matrix.txt.gz
+Using locally cached version of GPL21827 found here:
+C:/Users/10215/WorkBuddy/2026-10-03-00-10-07/rerun_2026-10-13/GSE106253/GPL21827.soft.gz 
+缁村害: 61046 鎺㈤拡 x 8 鏍锋湰
+鍒嗙粍:grp
+Control     OLF 
+      4       4 
+浣跨敤瀹氬悜姣斿娉ㄩ噴: 44 瀵规帰閽?>鍩哄洜
+Warning message:
+In wilcox.test.default(x = DATA[[1L]], y = DATA[[2L]], ...) :
+  cannot compute exact p-value with ties
+鍩哄洜绾у樊寮傝〃宸茶惤鐩? results/DEG_GSE106253_genelevel.csv ( 42 涓熀鍥?
+
+绛惧悕鍩哄洜鍙敤: TGFB1, COL13A1, BMPR1B, FGFRL1, PIK3IP1 
+绛惧悕鍩哄洜缂哄け(骞冲彴鏃犳帰閽?: LOC283404 
+=== GSE106253 LASSO ROC ===
+                                                 Model AUC        CI95
+1 LASSO signature (external, GSE106253 4v4, 5/6 genes)   1 1.000-1.000
+     p_value
+1 0.02857143
+Warning messages:
+1: In ci.auc.roc(roc_obj, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+2: In ci.auc.roc(roc_obj, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+
+閾佹浜″熀鍥犺鐩? 34 / 36 
+閾佹浜¤仛鍚堣瘎鍒?z-mean) OLF vs Control: Wilcoxon P=0.343
+鍧囧€? Control = 0.158  OLF = -0.158 
+
+=== 11 done ===

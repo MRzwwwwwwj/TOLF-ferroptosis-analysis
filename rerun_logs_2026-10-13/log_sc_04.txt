@@ -1,0 +1,18 @@
+﻿                                      finding                  cohort1
+1 Macrophage ferroptosis rank (by mean score) rank 1 of 5 (mean 0.365)
+2 Macrophage ferroptosis, diseased vs control           0.468 vs 0.311
+3       Macrophage delta (diseased - control)                    0.157
+4                   Macrophage P value (adj.)                  2.4e-30
+5                SPP1+ macrophage ferroptosis                    0.442
+6                SPP1- macrophage ferroptosis                    0.356
+7                      SPP1+ vs SPP1- P value                  2.9e-15
+                   cohort2
+1 rank 1 of 7 (mean 0.178)
+2           0.207 vs 0.174
+3                    0.033
+4                  7.0e-30
+5                    0.308
+6                    0.171
+7                 1.8e-184
+
+[DONE] 鍥惧瓨浜?figures/Fig_cross_sc_*.png锛岃〃瀛樹簬 results/scRNA_cross_validation_summary.csv

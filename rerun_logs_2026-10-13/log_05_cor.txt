@@ -1,0 +1,14 @@
+﻿鎬荤浉鍏冲: 115  寮虹浉鍏冲(|r|>0.7 & P<0.05): 10 
+     dataset      PCD_module Immune_cell          r           P strong
+86  ssGSEA28  panoptosis.txt         Tem  0.9152411 0.001427155   TRUE
+54  ssGSEA28 ferroptosis.txt Macrophages  0.8585528 0.006345632   TRUE
+109 ssGSEA28  pyroptosis.txt         Tem  0.8285577 0.011033469   TRUE
+1   ssGSEA28 cuproptosis.txt         aDC -0.7898139 0.019708486   TRUE
+85  ssGSEA28  panoptosis.txt         Tcm  0.7877722 0.020254918   TRUE
+102 ssGSEA28  pyroptosis.txt Neutrophils  0.7722996 0.024703459   TRUE
+79  ssGSEA28  panoptosis.txt Neutrophils  0.7462033 0.033484874   TRUE
+99  ssGSEA28  pyroptosis.txt         iDC  0.7412226 0.035349966   TRUE
+76  ssGSEA28  panoptosis.txt         iDC  0.7335547 0.038342975   TRUE
+114 ssGSEA28  pyroptosis.txt   Th2_cells  0.7232886 0.042584474   TRUE
+
+=== 瀹屾垚 ===

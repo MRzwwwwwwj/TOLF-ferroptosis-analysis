@@ -1,0 +1,64 @@
+﻿绛惧悕鍩哄洜: TGFB1, COL13A1, BMPR1B, LOC283404, FGFRL1, PIK3IP1 
+璁粌闆嗗垎缁?(label=1 鑲ュ帤): 4 4 
+Rscript.exe : Warning message:
+所在位置 行:503 字符: 370
++ ... 106253.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\12_nomogra ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning message::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+In datadist(train) :
+  risk_score is a matrix or has incorrect length; ignored
+Logistic Regression Model
+
+lrm(formula = label ~ TGFB1 + COL13A1 + BMPR1B + LOC283404 + 
+    FGFRL1 + PIK3IP1, data = train, x = TRUE, y = TRUE, penalty = 1)
+
+
+Penalty factors
+
+ simple nonlinear interaction nonlinear.interaction
+      1         1           1                     1
+
+                     Model Likelihood    Discrimination    Rank Discrim.    
+                           Ratio Test           Indexes          Indexes    
+Obs             8    LR chi2    10.00    R2       0.878    C       1.000    
+ 0              4    d.f.       0.794    R2(6,8)  0.278    Dxy     1.000    
+ 1              4    Pr(> chi2)0.0010    R2(6,6)  0.352    gamma   1.000    
+max |deriv| 3e-10    Penalty     1.39    Brier    0.004    tau-a   0.571    
+
+          Coef    S.E.   Wald Z Pr(>|Z|) Penalty Scale
+Intercept -0.0021 1.4242  0.00  0.9988   0.0000       
+TGFB1      0.5643 1.0617  0.53  0.5951   0.8755       
+COL13A1    0.5635 1.0740  0.52  0.5998   0.8657       
+BMPR1B     0.4243 0.8139  0.52  0.6021   1.1459       
+LOC283404 -0.3911 0.7683 -0.51  0.6107   1.2136       
+FGFRL1     0.6893 1.3625  0.51  0.6129   0.6843       
+PIK3IP1    0.8700 1.6968  0.51  0.6081   0.5492       
+
+null device 
+          1 
+
+n=8   Mean absolute error=NaN   Mean squared error=NaN
+0.9 Quantile of absolute error=NA
+
+null device 
+          1 
+
+Nomogram C-index = 1.000
+Assuming '1' is [Event] and '0' is [non-Event]
+Coordinate system already present.
+鈩?Adding new coordinate system, which will replace the existing one.
+Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occurred 
+Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occurred 
+澶栭儴 GSE206560 n=5 (case=3); GSE106253 n=8 (case=4)
+Assuming '1' is [Event] and '0' is [non-Event]
+Assuming '1' is [Event] and '0' is [non-Event]
+Coordinate system already present.
+鈩?Adding new coordinate system, which will replace the existing one.
+Coordinate system already present.
+鈩?Adding new coordinate system, which will replace the existing one.
+
+=== 12 nomogram/DCA done ===

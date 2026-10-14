@@ -1,0 +1,110 @@
+=== sample -> group mapping (请核对!) ===
+  GSM8367258_Tendon_C1.rds.gz              -> Control
+  GSM8367259_Tendon_C3.rds.gz              -> Control
+  GSM8367260_Tendon_C5.rds.gz              -> Control
+  GSM8367261_Tendon_N0.rds.gz              -> Degenerative
+  GSM8367262_Tendon_N1.rds.gz              -> Degenerative
+  GSM8367263_Tendon_N2.rds.gz              -> Degenerative
+  GSM8367264_Tendon_N3.rds.gz              -> Degenerative
+  GSM8367265_Tendon_N5.rds.gz              -> Degenerative
+  GSM8367266_Tendon_N10.rds.gz             -> Degenerative
+
+[skip] GSM8367258_Tendon_C1 already done
+[skip] GSM8367259_Tendon_C3 already done
+[skip] GSM8367260_Tendon_C5 already done
+===== GSM8367261_Tendon_N0 ( Degenerative ) =====
+  cells: 3337  genes: 19266 
+    no annotation column -> marker-panel fallback (clustering)
+Warning: DimReduc pca changing from DimReduc to DimReduc
+Warning: Number of dimensions changing from 50 to 30
+As of Seurat v5, we recommend using AggregateExpression to perform pseudo-bulk analysis.
+This message is displayed once per session.
+First group.by variable `ident` starts with a number, appending `g` to ensure valid variable names
+This message is displayed once every 8 hours.
+  ferroptosis genes found: 35 / 36 
+  saved: rerun_2026-10-13_scores/GSM8367261_Tendon_N0.csv 
+[skip] GSM8367262_Tendon_N1 already done
+===== GSM8367263_Tendon_N2 ( Degenerative ) =====
+  cells: 3065  genes: 17522 
+    no annotation column -> marker-panel fallback (clustering)
+Warning: DimReduc pca changing from DimReduc to DimReduc
+Warning: Number of dimensions changing from 50 to 30
+  ferroptosis genes found: 33 / 36 
+  saved: rerun_2026-10-13_scores/GSM8367263_Tendon_N2.csv 
+===== GSM8367264_Tendon_N3 ( Degenerative ) =====
+  cells: 2823  genes: 16418 
+    no annotation column -> marker-panel fallback (clustering)
+Warning: DimReduc pca changing from DimReduc to DimReduc
+Warning: Number of dimensions changing from 50 to 30
+  ferroptosis genes found: 34 / 36 
+  saved: rerun_2026-10-13_scores/GSM8367264_Tendon_N3.csv 
+===== GSM8367265_Tendon_N5 ( Degenerative ) =====
+  cells: 5149  genes: 19679 
+    no annotation column -> marker-panel fallback (clustering)
+Warning: DimReduc pca changing from DimReduc to DimReduc
+Warning: Number of dimensions changing from 50 to 30
+  ferroptosis genes found: 35 / 36 
+  saved: rerun_2026-10-13_scores/GSM8367265_Tendon_N5.csv 
+===== GSM8367266_Tendon_N10 ( Degenerative ) =====
+  cells: 952  genes: 17138 
+    no annotation column -> marker-panel fallback (clustering)
+Warning: DimReduc pca changing from DimReduc to DimReduc
+Warning: Number of dimensions changing from 50 to 30
+  ferroptosis genes found: 34 / 36 
+  saved: rerun_2026-10-13_scores/GSM8367266_Tendon_N10.csv 
+There were 30 warnings (use warnings() to see them)
+
+===== combining =====
+total cells: 51686 
+      celltype     n       mean     median
+4   Macrophage 27852 0.17848017 0.16288101
+5    Mast_cell   649 0.14421364 0.13803939
+3   Fibroblast  6611 0.14197281 0.14323558
+6 Pericyte_SMC   708 0.14189422 0.14557972
+2  Endothelial  1448 0.11434396 0.11186101
+1       B_cell  2747 0.06716818 0.06217205
+7         T_NK 11671 0.04803356 0.04361461
+                 celltype n_deg n_ctrl   mean_deg  mean_ctrl       delta
+T_NK                 T_NK  6216   5455 0.07799477 0.01389261 0.064102161
+Fibroblast     Fibroblast  4910   1701 0.16032196 0.08900729 0.071314672
+Endothelial   Endothelial   996    452 0.15080676 0.03399674 0.116810021
+Macrophage     Macrophage  4026  23826 0.20713121 0.17363886 0.033492352
+B_cell             B_cell  1899    848 0.07411394 0.05161394 0.022499998
+Mast_cell       Mast_cell    35    614 0.23539095 0.13901623 0.096374718
+Pericyte_SMC Pericyte_SMC   429    279 0.14369763 0.13912124 0.004576395
+                  p_wilcox         p_adj
+T_NK         6.936207e-260 4.855345e-259
+Fibroblast   6.876834e-114 2.406892e-113
+Endothelial   9.933106e-60  2.317725e-59
+Macrophage    4.022750e-30  7.039813e-30
+B_cell        5.185115e-08  7.259161e-08
+Mast_cell     1.640812e-06  1.914280e-06
+Pericyte_SMC  3.766554e-01  3.766554e-01
+       spp1_status     n      mean      p_wilcox
+1 SPP1-_Macrophage 26337 0.1710486 1.784003e-184
+2 SPP1+_Macrophage  1515 0.3076721 1.784003e-184
+
+[ALL DONE] 结果在  rerun_2026-10-13_results / — 打包下载后发给本地
+       B_cell  2747 0.06716818 0.06217205
+7         T_NK 11671 0.04803356 0.04361461
+                 celltype n_deg n_ctrl   mean_deg  mean_ctrl       delta
+T_NK                 T_NK  6216   5455 0.07799477 0.01389261 0.064102161
+Fibroblast     Fibroblast  4910   1701 0.16032196 0.08900729 0.071314672
+Endothelial   Endothelial   996    452 0.15080676 0.03399674 0.116810021
+Macrophage     Macrophage  4026  23826 0.20713121 0.17363886 0.033492352
+B_cell             B_cell  1899    848 0.07411394 0.05161394 0.022499998
+Mast_cell       Mast_cell    35    614 0.23539095 0.13901623 0.096374718
+Pericyte_SMC Pericyte_SMC   429    279 0.14369763 0.13912124 0.004576395
+                  p_wilcox         p_adj
+T_NK         6.936207e-260 4.855345e-259
+Fibroblast   6.876834e-114 2.406892e-113
+Endothelial   9.933106e-60  2.317725e-59
+Macrophage    4.022750e-30  7.039813e-30
+B_cell        5.185115e-08  7.259161e-08
+Mast_cell     1.640812e-06  1.914280e-06
+Pericyte_SMC  3.766554e-01  3.766554e-01
+       spp1_status     n      mean      p_wilcox
+1 SPP1-_Macrophage 26337 0.1710486 1.784003e-184
+2 SPP1+_Macrophage  1515 0.3076721 1.784003e-184
+
+[ALL DONE] 结果在  rerun_2026-10-13_results / — 打包下载后发给本地

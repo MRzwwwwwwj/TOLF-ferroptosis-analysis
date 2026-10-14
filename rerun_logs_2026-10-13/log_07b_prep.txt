@@ -1,0 +1,8 @@
+﻿sample,group,n_sites
+B01,Ossified,1696
+B02,Ossified,7244
+B03,Ossified,6162
+A01,NonOssified,825
+A02,NonOssified,2043
+A03,NonOssified,3205
+total rows: 21175 -> C:/Users/10215/WorkBuddy/2026-10-03-00-10-07/rerun_2026-10-13\results\m6a_sites_all.csv

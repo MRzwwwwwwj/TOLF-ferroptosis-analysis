@@ -1,0 +1,14 @@
+﻿LM22 鍩哄洜瑕嗙洊: 515 / 547 
+CIBERSORT 瀹屾垚: 8 鏍锋湰 x 25 鍒?
+鍘诲嵎绉樉钁楁€?P<0.05): 2 / 8 
+鐩稿叧鎬?R 鑼冨洿: -0.04113087 0.5430365 
+
+鍒嗙粍宸紓 top5 (CIBERSORT):
+               Cell Elderly_mean Young_mean W_p W_p_adj
+1     B cells naive          NaN        NaN  NA      NA
+2    B cells memory          NaN        NaN  NA      NA
+3      Plasma cells          NaN        NaN  NA      NA
+4       T cells CD8          NaN        NaN  NA      NA
+5 T cells CD4 naive          NaN        NaN  NA      NA
+
+CIBERSORT 鍒嗘瀽瀹屾垚

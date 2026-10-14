@@ -1,0 +1,40 @@
+﻿null device 
+          1 
+Rscript.exe : As of Seurat v5, we recommend using AggregateExpression to perform pseudo-bulk analysis.
+所在位置 行:503 字符: 115
++ ... 026-10-13"; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\sc_02_anno ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (As of Seurat v5...-bulk analysis.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+This message is displayed once per session.
+First group.by variable `seurat_clusters` starts with a number, appending `g` to ensure valid variable names
+This message is displayed once every 8 hours.
+=== cluster -> celltype ===
+             0              1              2              3              4 
+  "Fibroblast"   "Fibroblast"  "Endothelial"   "Fibroblast"      "NK_cell" 
+             5              6              7              8              9 
+  "Macrophage"   "Fibroblast"  "Endothelial" "Pericyte_SMC"   "Fibroblast" 
+            10             11             12             13             14 
+  "Macrophage"      "NK_cell"  "Endothelial"      "Cycling"       "B_cell" 
+            15             16             17             18             19 
+  "Fibroblast"       "B_cell"      "NK_cell"   "Fibroblast"   "Fibroblast" 
+            20 
+  "Fibroblast" 
+# A tibble: 38 脳 6
+   sample_id group          dataset   celltype_detail      n   pct
+   <chr>     <chr>          <chr>     <chr>            <int> <dbl>
+ 1 LDH       Control_LDH    GSE294458 B_cell             790  6.25
+ 2 LDH       Control_LDH    GSE294458 Cycling            663  5.25
+ 3 LDH       Control_LDH    GSE294458 Endothelial       2842 22.5 
+ 4 LDH       Control_LDH    GSE294458 Fibroblast        1608 12.7 
+ 5 LDH       Control_LDH    GSE294458 NK_cell           3317 26.3 
+ 6 LDH       Control_LDH    GSE294458 Pericyte_SMC       766  6.06
+ 7 LDH       Control_LDH    GSE294458 SPP1+_Macrophage   249  1.97
+ 8 LDH       Control_LDH    GSE294458 SPP1-_Macrophage  2396 19.0 
+ 9 LFH1      LF_hypertrophy GSE267819 B_cell              11  0.57
+10 LFH1      LF_hypertrophy GSE267819 Cycling             45  2.33
+# 鈩?28 more rows
+null device 
+          1 
+=== sc_02 done ===

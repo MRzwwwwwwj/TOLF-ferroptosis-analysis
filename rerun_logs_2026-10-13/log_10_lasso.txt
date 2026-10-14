@@ -1,0 +1,47 @@
+﻿Features (exploratory DEG): 720 
+Rscript.exe : Warning messages:
+所在位置 行:503 字符: 115
++ ... 026-10-13"; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\10_lasso_r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning messages::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+1: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+2: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+3: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+4: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+5: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+6: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+7: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+8: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+9: In lognet(x, is.sparse, y, weights, offset, alpha, nobs, nvars,  :
+  one multinomial or binomial class has fewer than 8  observations; dangerous ground
+10: Option grouped=FALSE enforced in cv.glmnet, since < 3 observations per fold 
+lambda.min = 0.004945095  LOOCV deviance = 0.0819821 
+=== LASSO signature ( 6 genes) ===
+       Gene    beta           direction
+2     TGFB1  2.6069   up_in_hypertrophy
+4   COL13A1  1.7768   up_in_hypertrophy
+1    BMPR1B  0.8227   up_in_hypertrophy
+3 LOC283404 -0.6963 down_in_hypertrophy
+5    FGFRL1  0.1421   up_in_hypertrophy
+6   PIK3IP1  0.0701   up_in_hypertrophy
+Warning messages:
+1: In ci.auc.roc(roc1, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+2: In ci.auc.roc(roc1, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+=== ROC AUC ===
+                    Model AUC        CI95
+1 LASSO signature (LOOCV)   1 1.000-1.000
+2  Ferroptosis GSVA score   1 1.000-1.000
+3 Macrophage ssGSEA score   1 1.000-1.000
+=== 10 done ===

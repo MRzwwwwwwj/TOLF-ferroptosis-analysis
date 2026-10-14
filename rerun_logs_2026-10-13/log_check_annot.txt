@@ -1,0 +1,20 @@
+﻿cells: 33817 vs 33817 ; common: 33817 
+label agreement: 100 %
+              rerun
+orig           B_cell Cycling Endothelial Fibroblast Macrophage NK_cell
+  B_cell         1042       0           0          0          0       0
+  Cycling           0     844           0          0          0       0
+  Endothelial       0       0        6260          0          0       0
+  Fibroblast        0       0           0      16917          0       0
+  Macrophage        0       0           0          0       3367       0
+  NK_cell           0       0           0          0          0    3939
+  Pericyte_SMC      0       0           0          0          0       0
+              rerun
+orig           Pericyte_SMC
+  B_cell                  0
+  Cycling                 0
+  Endothelial             0
+  Fibroblast              0
+  Macrophage              0
+  NK_cell                 0
+  Pericyte_SMC         1448

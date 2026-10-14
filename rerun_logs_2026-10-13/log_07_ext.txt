@@ -1,0 +1,58 @@
+﻿=== GSE206560 12 鏍锋湰鍏冩暟鎹?===
+          geo                                    title antibody assay
+1  GSM6256879 ligamentum flavum ,non ossified IP,rep 1      m6A    IP
+2  GSM6256880 ligamentum flavum ,non ossified IP,rep 2      m6A    IP
+3  GSM6256881 ligamentum flavum ,non ossified IP,rep 3      m6A    IP
+4  GSM6256882    ligamentum flavum , ossified IP,rep 1      m6A    IP
+5  GSM6256883    ligamentum flavum , ossified IP,rep 2      m6A    IP
+6  GSM6256884    ligamentum flavum , ossified IP,rep 3      m6A    IP
+7  GSM6256885   ligamentum flavum ,non ossified ,rep 1     none Input
+8  GSM6256886   ligamentum flavum ,non ossified ,rep 2     none Input
+9  GSM6256887   ligamentum flavum ,non ossified ,rep 3     none Input
+10 GSM6256888      ligamentum flavum , ossified ,rep 1     none Input
+11 GSM6256889      ligamentum flavum , ossified ,rep 2     none Input
+12 GSM6256890      ligamentum flavum , ossified ,rep 3     none Input
+           oss
+1  NonOssified
+2  NonOssified
+3  NonOssified
+4     Ossified
+5     Ossified
+6     Ossified
+7  NonOssified
+8  NonOssified
+9  NonOssified
+10    Ossified
+11    Ossified
+12    Ossified
+counts 鏂囦欢鏍锋湰: GSM6256885,GSM6256887,GSM6256888,GSM6256889,GSM6256890 
+counts: 39374 genes x 5 samples
+Input 楠岃瘉鏍锋湰: GSM6256885=NonOssified, GSM6256887=NonOssified, GSM6256888=Ossified, GSM6256889=Ossified, GSM6256890=Ossified 
+GSE206560 鏄捐憲鍩哄洜(adj.P<0.05): 765 
+
+涓ゆ暟鎹泦 logFC 涓€鑷存€? Pearson r = 0.001 (P = 8.89e-01, n = 14042)
+=== 鍏抽敭鍩哄洜鍦?GSE206560 鐨勮〃鐜?===
+    gene      logFC      P.Value  adj.P.Val
+ COL13A1  2.5686951 0.0001349902 0.01706425
+  BMPR1B -1.0925657 0.0118872043 0.12015976
+ COL11A1 -6.9044152 0.0293865394 0.18623343
+   HMOX1 -0.5146980 0.3170237228 0.59677016
+  STEAP3  0.2930624 0.3809902407 0.65023014
+  CDKN1A  0.1185797 0.5596473315 0.77725333
+   TGFB1 -0.1411408 0.6295804991 0.82050995
+TPM 鐭╅樀: 39374 genes x 5 samples
+PCD 鍩哄洜闆嗚鐩? 16/cuproptosis, 24/disulfidptosis, 35/ferroptosis, 18/panoptosis, 24/pyroptosis 
+
+=== PCD 缁勯棿姣旇緝 (GSE206560, 2v3 涓嶅钩琛? 浠呮姤鏂瑰悜) ===
+            PCD mean_Ossified mean_NonOssified direction P.wilcox
+    cuproptosis        -0.083           -0.016      Down      0.8
+ disulfidptosis        -0.002           -0.267        Up      0.8
+    ferroptosis         0.089           -0.259        Up      0.2
+     panoptosis         0.354           -0.379        Up      0.2
+     pyroptosis         0.294           -0.473        Up      0.2
+
+=== 鏍稿績鍙戠幇楠岃瘉: Ferroptosis 脳 宸ㄥ櫖缁嗚優 (GSE206560, n=5) ===
+      immune rho    P
+ Macrophages 0.5 0.45
+
+[07] GSE206560 澶栭儴楠岃瘉瀹屾垚銆傜粨鏋滃湪 results/, 鍥惧湪 figures/銆?

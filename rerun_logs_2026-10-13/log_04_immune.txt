@@ -1,0 +1,30 @@
+﻿!! IOBR 鏈畨瑁? 璺宠繃 CIBERSORT
+Bindea 鍏嶇柅缁嗚優绛惧悕: 23 绉?
+Rscript.exe : ! Some gene sets have size one. Consider setting minSize > 1
+所在位置 行:503 字符: 115
++ ... 026-10-13"; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\04_immune. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (! Some gene set...ing minSize > 1 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+缁勯棿宸紓鍏嶇柅缁嗚優 (鎸?P 鎺掑簭, 鍓?15):
+               Cell   method    mean_young mean_elderly   wilcox_P
+8       Macrophages ssGSEA28 -4.717530e-02   0.19747124 0.02857143
+13              pDC ssGSEA28  2.657271e-01  -0.11782554 0.02857143
+18              TFH ssGSEA28 -1.705393e-05   0.11191655 0.02857143
+20        Th1_cells ssGSEA28  2.308446e-02   0.13318868 0.02857143
+1               aDC ssGSEA28 -6.718677e-02   0.26281932 0.05714286
+11 NK_CD56dim_cells ssGSEA28 -5.987220e-02   0.12719755 0.05714286
+9        Mast_cells ssGSEA28  5.477916e-02   0.17178903 0.11428571
+19              Tgd ssGSEA28  2.271086e-01  -0.02996934 0.11428571
+3       CD8_T_cells ssGSEA28  8.168657e-02   0.03160466 0.34285714
+7               iDC ssGSEA28  6.680792e-02   0.12479844 0.34285714
+4   Cytotoxic_cells ssGSEA28  4.300189e-03   0.10164112 0.68571429
+6       Eosinophils ssGSEA28  1.031077e-01   0.07281967 0.68571429
+12         NK_cells ssGSEA28  4.927681e-02   0.03572386 0.68571429
+14          T_cells ssGSEA28  1.297815e-01   0.01726947 0.68571429
+16              Tcm ssGSEA28  2.780044e-02   0.06349469 0.68571429
+
+=== 瀹屾垚 ===

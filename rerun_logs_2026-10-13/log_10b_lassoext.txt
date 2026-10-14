@@ -1,0 +1,29 @@
+﻿TPM cols: GeneID,GSM6256885,GSM6256887,GSM6256888,GSM6256889,GSM6256890,NA,NA 
+Non-ossification: GSM6256885,GSM6256887 
+Ossification: GSM6256888,GSM6256889,GSM6256890 
+Signature genes: TGFB1, COL13A1, BMPR1B, LOC283404, FGFRL1, PIK3IP1 
+Missing in GSE206560: LOC283404 
+Rscript.exe : Warning messages:
+所在位置 行:503 字符: 227
++ ... _lasso.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\10b_lasso_ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning messages::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+1: In ci.auc.roc(roc_obj, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+2: In ci.auc.roc(roc_obj, quiet = TRUE) :
+  ci.auc() of a ROC curve with AUC == 1 is always 1-1 and can be misleading.
+=== External ROC ===
+                                      Model AUC        CI95 p_value
+1 LASSO signature (external, GSE206560 3v2)   1 1.000-1.000     0.2
+Scores by group:
+$`0`
+GSM6256885 GSM6256887 
+    18.648     17.488 
+
+$`1`
+GSM6256888 GSM6256889 GSM6256890 
+    21.890     20.110     20.219 
+
+=== 10b done ===

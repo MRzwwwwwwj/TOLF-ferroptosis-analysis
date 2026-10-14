@@ -1,0 +1,17 @@
+﻿鍒嗙粍宸紓 top8 (CIBERSORT):
+                           Cell Elderly_mean Young_mean       W_p   W_p_adj
+7  T cells CD4 memory activated 0.0167323514 0.07328828 0.1037537 0.6870403
+9    T cells regulatory (Tregs) 0.0077087736 0.03310845 0.1240947 0.6870403
+21                  Eosinophils 0.0005719698 0.04902924 0.1240947 0.6870403
+4                   T cells CD8 0.0152561633 0.13008902 0.1831502 0.6870403
+15               Macrophages M1 0.0118622136 0.05927161 0.1831502 0.6870403
+5             T cells CD4 naive 0.0866110822 0.04391374 0.1912670 0.6870403
+1                 B cells naive 0.0315786578 0.12966469 0.2186037 0.6870403
+14               Macrophages M0 0.0645253923 0.02868674 0.3561703 0.7486453
+鍏卞悓鏍锋湰: 8 
+
+寮虹浉鍏冲 (|r|>0.7, p<0.05): 3 
+  cuproptosis x B cells naive: r=0.775 p=0.0238
+  cuproptosis x T cells CD8: r=0.851 p=0.0074
+  cuproptosis x Macrophages M1: r=0.869 p=0.0051
+CIBERSORT 鐩稿叧鎬х儹鍥惧凡淇濆瓨

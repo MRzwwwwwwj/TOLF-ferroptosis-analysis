@@ -1,0 +1,21 @@
+﻿DEG up: 463  down: 257 
+ferroptosis    闆嗗ぇ灏?36 | up浜ら泦 3 | down浜ら泦 0
+pyroptosis     闆嗗ぇ灏?24 | up浜ら泦 0 | down浜ら泦 0
+cuproptosis    闆嗗ぇ灏?16 | up浜ら泦 0 | down浜ら泦 0
+disulfidptosis 闆嗗ぇ灏?24 | up浜ら泦 0 | down浜ら泦 0
+panoptosis     闆嗗ぇ灏?18 | up浜ら泦 0 | down浜ら泦 0
+OPCDEG 鎬绘暟: 3 
+鑳屾櫙鍩哄洜(鑺墖妫€鍑?: 22231 
+Rscript.exe : No encoding supplied: defaulting to UTF-8.
+所在位置 行:503 字符: 233
++ ... chment.txt; & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" "scripts\06b_enrich ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (No encoding sup...lting to UTF-8.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+瀵岄泦鏌ヨ: DEG_up ( 463 genes ) ... 90 鏉℃樉钁楁潯鐩?
+No encoding supplied: defaulting to UTF-8.
+瀵岄泦鏌ヨ: DEG_dn ( 257 genes ) ... 7 鏉℃樉钁楁潯鐩?
+No encoding supplied: defaulting to UTF-8.
+瀵岄泦鏌ヨ: DEG_all ( 720 genes ) ... 87 鏉℃樉钁楁潯鐩?
+瀵岄泦缁撴灉涓庣偣鍥惧凡淇濆瓨

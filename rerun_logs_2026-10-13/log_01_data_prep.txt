@@ -1,0 +1,21 @@
+﻿鏍锋湰:
+         gsm                      title
+1 GSM3100386 Flavum_young_20 year old_1
+2 GSM3100387 Flavum_young_20 year old_2
+3 GSM3100388   Flavum_young_24 year old
+4 GSM3100389   Flavum_young_19 year old
+5 GSM3100390 Flavum_elderly_75 year old
+6 GSM3100391 Flavum_elderly_83 year old
+7 GSM3100392 Flavum_elderly_80 year old
+8 GSM3100393 Flavum_elderly_82 year old
+鎺㈤拡鏁? 35789  鏍锋湰鏁? 8 
+骞冲彴琛ㄥ垪鍚? ID, SPOT_ID, CONTROL_TYPE, REFSEQ, GB_ACC, LOCUSLINK_ID, GENE_SYMBOL, GENE_NAME, UNIGENE_ID, ENSEMBL_ID, ACCESSION_STRING, CHROMOSOMAL_LOCATION, CYTOBAND, DESCRIPTION, GO_ID, SEQUENCE 
+娉ㄩ噴鎺㈤拡鏁? 50739 
+瀵圭収鎺㈤拡绫诲瀷鍙栧€? pos, false, neg 
+鍩哄洜绾х煩闃? 22231 鍩哄洜 x 8 鏍锋湰
+
+=== 瀹屾垚 ===
+
+elderly_hypertrophied         young_control 
+                    4                     4 
+琛ㄨ揪鑼冨洿: -7.36 10.41 
