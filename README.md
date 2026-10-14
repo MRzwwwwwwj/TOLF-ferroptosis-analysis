@@ -6,6 +6,10 @@ Analysis code for the manuscript:
 
 *(submitted to Journal of Clinical Medicine, MDPI)*
 
+**Permanent archive (Figshare)**: https://doi.org/10.6084/m9.figshare.34489533
+
+**Source-code repository (GitHub)**: https://github.com/MRzwwwwwwj/TOLF-ferroptosis-analysis
+
 ## Overview
 
 All analyses are purely computational, based on publicly available GEO datasets:
