@@ -4,7 +4,7 @@ Analysis code for the manuscript:
 
 **"Landscape of Multi-Modal Programmed Cell Death and Immune Microenvironment Remodeling in Thoracic Ossification of the Ligamentum Flavum: Integrative Bioinformatic Analysis with Epitranscriptomic and Single-Cell Validation"**
 
-*(submitted to Journal of Clinical Medicine, MDPI)*
+*(submitted to the International Journal of Molecular Sciences (IJMS), MDPI)*
 
 **Permanent archive (Figshare)**: https://doi.org/10.6084/m9.figshare.34489533
 
@@ -65,3 +65,11 @@ Corresponding author: Dingsheng Zha — see the manuscript for contact details.
 - `10_lasso_roc.R` 已修正：ROC 标题缩短（去 "discriminating"）防右缘裁切；重跑验证 LASSO/ROC csv 逐字节零漂移
 - `14_figure_panels.R` 已修正：FigS7 段路径 monocle → monocle_v2（旧路径会把生产图覆盖回 ρ=0.31 归档版）
 - 矢量拼版：11 张图另有 17cm 宽 PDF 版（figures/panels_pdf/，由 figure-merge 技能生成），投稿优先使用
+
+
+## 2026-10-15 补充：标签清洗与投稿图组装
+
+- `05_cor_heatmap.R` 已更新：主图**固定使用 ssGSEA28**（论文报告的 115 对 PCD × 免疫相关即出自该矩阵）；CIBERSORT (LM22) 相关矩阵由 `04b_cibersort.R` / `04c_cibersort_post.R` 单独产出，不进本脚本，以免 `pick` 逻辑在不同环境下切换主图数据集。读取 PCD 评分后**防御性去除模块名的 `.txt` 后缀**（旧版结果 CSV 曾残留文件名后缀并污染 Figure 1B/1D 与 Table S2）；图中模块名首字母大写、细胞名下划线转空格——**仅显示层处理，写出 CSV 的取值与统计结果零改动**（重跑后 115 对相关的 r 与 P 与论文正文完全一致）。
+- `34_rebuild_fig1_pdf.py`：把面板 PNG 按固定坐标组装为**单页投稿 PDF**（Figure 1：页面 481.89 × 270.66 pt，A–D 四幅面板按原坐标嵌入，标签用 Helvetica 15pt）。原始投稿 PDF 的组装步骤脚本已遗失，此脚本补齐该环节，保证 panels_pdf 可由脚本重建。
+- `make_suppl_tables.py`：由结果 CSV 汇总生成 Table S1–S9（不做任何重新计算）。路径常量支持环境变量 `TOLF_WS` / `TOLF_RES` 覆盖。
+- `Rrun.sh` 及全部 R 脚本的 `.libPaths` 已统一到本机当前 R 安装路径（本机迁移所致，与他人环境无关；使用时按自身 R 路径调整即可）。

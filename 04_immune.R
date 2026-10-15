@@ -8,7 +8,7 @@
 #       figures/Fig_immune_boxplot.pdf/png
 # ============================================================
 
-.libPaths("D:/A生信/R-4.5.3/library")
+.libPaths("D:/ARLARS/R-4.5.3/library")
 suppressPackageStartupMessages({library(GSVA); library(ggplot2); library(reshape2)})
 
 wd <- "C:/Users/10215/WorkBuddy/2026-10-03-00-10-07"

@@ -7,7 +7,7 @@
 #       results/probe2gene_GPL17077.csv
 # ============================================================
 
-.libPaths("D:/A生信/R-4.5.3/library")
+.libPaths("D:/ARLARS/R-4.5.3/library")
 suppressPackageStartupMessages(library(limma))
 
 wd <- "C:/Users/10215/WorkBuddy/2026-10-03-00-10-07"

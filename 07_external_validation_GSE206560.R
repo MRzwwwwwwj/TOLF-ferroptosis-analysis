@@ -5,7 +5,7 @@
 #   差异表达 + PCD 评分 + 免疫浸润(ssGSEA) + 与主数据集一致性
 # 依赖: edgeR, limma, GSVA, data.table, ggplot2
 # 运行(PowerShell):
-#   & "D:\A生信\R-4.5.3\bin\Rscript.exe" scripts/07_external_validation_GSE206560.R
+#   & "D:\ARLARS\R-4.5.3\bin\Rscript.exe" scripts/07_external_validation_GSE206560.R
 # =====================================================================
 
 suppressPackageStartupMessages({

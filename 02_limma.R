@@ -5,7 +5,7 @@
 #       若显著基因过少, 降级报告 P<0.01 & |log2FC|>1 (探索性, 如实标注)
 # ============================================================
 
-.libPaths("D:/A生信/R-4.5.3/library")
+.libPaths("D:/ARLARS/R-4.5.3/library")
 suppressPackageStartupMessages({library(limma); library(ggplot2)})
 
 wd <- "C:/Users/10215/WorkBuddy/2026-10-03-00-10-07"
