@@ -73,3 +73,27 @@ Corresponding author: Dingsheng Zha — see the manuscript for contact details.
 - `34_rebuild_fig1_pdf.py`：把面板 PNG 按固定坐标组装为**单页投稿 PDF**（Figure 1：页面 481.89 × 270.66 pt，A–D 四幅面板按原坐标嵌入，标签用 Helvetica 15pt）。原始投稿 PDF 的组装步骤脚本已遗失，此脚本补齐该环节，保证 panels_pdf 可由脚本重建。
 - `make_suppl_tables.py`：由结果 CSV 汇总生成 Table S1–S9（不做任何重新计算）。路径常量支持环境变量 `TOLF_WS` / `TOLF_RES` 覆盖。
 - `Rrun.sh` 及全部 R 脚本的 `.libPaths` 已统一到本机当前 R 安装路径（本机迁移所致，与他人环境无关；使用时按自身 R 路径调整即可）。
+
+## Version 2 (2026-10-16)
+
+Submitted alongside the IJMS manuscript. Changes relative to Version 1 (2026-10-14):
+
+- `05_cor_heatmap.R`: the main PCD x immune correlation figure (Figure 1D) is pinned to the
+  ssGSEA28 matrix; CIBERSORT (LM22) correlations are produced separately by
+  `04b_cibersort.R` / `04c_cibersort_post.R`. Module names are defensively stripped of a
+  residual `.txt` filename suffix inherited from legacy result CSVs, which had leaked into
+  Figure 1B/1D and Supplementary Table S2. Module and cell-type names are prettified for
+  display only. **All statistics are unchanged**: r and P for the 115 correlation pairs
+  reproduce exactly.
+- `32_clean_pcd_txt_labels.py` (new): the exact cleanup script used to purge the `.txt`
+  suffix from the result CSVs, retained for provenance. Backups are written before any file
+  is modified.
+- `34_rebuild_fig1_pdf.py` (new): assembles panel PNGs into the single-page submission PDF
+  for Figure 1 (481.89 x 270.66 pt; panels A-D at the original coordinates; Helvetica 15pt
+  labels). This step was missing from Version 1.
+- `make_suppl_tables.py` (new): builds Supplementary Tables S1-S9 from the result CSVs with
+  no recomputation. Paths overridable via `TOLF_WS` / `TOLF_RES`.
+- `make_graphical_abstract_v2.py` (new): generates the graphical abstract used for
+  submission (1100 x 620 px). Paths overridable via `TOLF_WS` / `TOLF_SUB`.
+
+The Figshare DOI is unchanged across versions.
