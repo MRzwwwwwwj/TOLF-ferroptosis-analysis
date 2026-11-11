@@ -2,9 +2,9 @@
 
 Analysis code for the manuscript:
 
-**"Landscape of Multi-Modal Programmed Cell Death and Immune Microenvironment Remodeling in Thoracic Ossification of the Ligamentum Flavum: Integrative Bioinformatic Analysis with Epitranscriptomic and Single-Cell Validation"**
+**"Multi-Modal Programmed Cell Death and Immune Microenvironment Alterations Associated with Ligamentum Flavum Hypertrophy and Ossification: An Integrative Bioinformatic Analysis with Single-Cell and m6A Profiling"**
 
-*(submitted to the International Journal of Molecular Sciences (IJMS), MDPI)*
+*(accepted for publication in the International Journal of Molecular Sciences (IJMS), MDPI)*
 
 **Permanent archive (Figshare)**: https://doi.org/10.6084/m9.figshare.34489533
 
