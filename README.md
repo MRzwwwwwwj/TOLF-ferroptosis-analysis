@@ -97,3 +97,37 @@ Submitted alongside the IJMS manuscript. Changes relative to Version 1 (2026-10-
   submission (1100 x 620 px). Paths overridable via `TOLF_WS` / `TOLF_SUB`.
 
 The Figshare DOI is unchanged across versions.
+
+## Version 3 (2026-11-11)
+
+Released upon manuscript acceptance. Adds the robustness / sensitivity analyses written
+during peer review (revision rounds 1 and 2) that produce the **accepted** version of the
+Supplementary Materials (Tables S10-S15, Figures S8 and S10). All core results (bulk,
+GSVA, immune, m6A, GSEA, LASSO signature, single-cell, CellChat) are unchanged from
+Version 2 and reproduce exactly; the scripts below are *additional* reviewer-requested
+validations, not modifications to the main pipeline.
+
+| Script | Produces | Reviewer point addressed |
+|---|---|---|
+| `39_nested_cv_signature.R` | Table S10 (panels A-C) + Fig S8 data | strict nested CV + permutation test against the "AUC = 1.0 = overfitting" concern (R1/R3/R4) |
+| `39b_lambda_grid_extension.R` | Table S10 (lambda-grid extension) | "lambda.min sits at the grid boundary" (R4) |
+| `83_auc_ci_round2.R` | Table S10 (panel D: AUC 95% CI) | AUC confidence intervals, DeLong + 2,000-sample stratified bootstrap + exact Clopper-Pearson (round-2 comment 2) |
+| `44_ferroptosis_sensitivity.R` | Table S11 | ferroptosis-score sensitivity across gene-set definitions (R4) |
+| `43_pseudobulk_BH.py` | Table S12 | sample-level pseudobulk + Benjamini-Hochberg correction (R4 "pseudo-replication / multiple testing") |
+| `45_m6A_depth_and_H2_trace.py` | Table S13 | m6A peak-count sensitivity to sequencing depth (R4) |
+| `47_slc7a11_celltype_expr.R` | Table S14 | key-gene expression by single-cell type (R4 cell-localisation query) |
+| `54_add_tableS15_parameters.py` | Table S15 | full single-cell / CellChat / monocle3 / robustness parameters (R1) |
+| `49_make_figS8.py` | Figure S8 | rendering of the nested-CV null + sensitivity forest plot |
+| `53_make_figS10_study_design.py` | Figure S10 | study-design flowchart (R4 / R2) |
+| `48_build_suppl_new_tables.py` | (assembles Tables S10-S14) | pipeline glue that collects the above outputs |
+
+**Run prerequisites.** These scripts continue from intermediate results produced by the
+main pipeline (Steps `01`-`14`, `sc_*`) and the GEO raw data listed above; they are not
+standalone. Set the working directory via `TOLF_WS` (workspace root, default `.`) and, for
+`83_auc_ci_round2.R`, the main-pipeline results directory via `TOLF_RES` (default
+`rerun_2026-10-13/results`). The machine-specific `.libPaths` lines have been removed for
+portability; use your own R library paths. Raw GEO data are NOT bundled - download them
+from NCBI GEO.
+
+The Figshare DOI (10.6084/m9.figshare.34489533) is a concept DOI and resolves to the
+latest version; it is unchanged across Versions 1-3.
